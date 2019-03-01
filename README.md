@@ -8,4 +8,4 @@ This a repository modified from TAGME reproducibility, we changed its code to:
 - add a tool to process traditional and simplified Chinese, and tranform wikipedia dump to simplified Chinese form.(TODO)
 - adjust it to fit short text like weibo, tieba.(TODO)
 
-introduction to the  TAGME reproducibility,please click [here]()
+introduction to the  TAGME reproducibility,please click [here](intro_raw.md)
