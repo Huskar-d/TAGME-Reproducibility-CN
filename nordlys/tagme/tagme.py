@@ -324,18 +324,19 @@ if __name__ == "__main__":
     #main()
 
     # good case
-    #tagme = Tagme(Query(123, u'政治局 常委 汪洋 同志 今天 发表 重要 讲话'), 0.0001)
-    #tagme = Tagme(Query(123, u'今天 这 座 城市 变成 了 一片 汪洋'), 0.0001)
-    #tagme = Tagme(Query(123, u'李娜 获得 今年 跳水 比赛 的 冠军'), 0.0001)
-    #tagme = Tagme(Query(123, u'李娜 获得 今年 网球 比赛 的 冠军'), 0.0001)
-    tagme = Tagme(Query(123, u'苹果 9月 份 又 发布 了 一款 手机 。'), 0.0001)
-    #tagme = Tagme(Query(123, u'今天 吃了 好多 的 苹果 等 水果 。'), 0.0001)
+    #s = u'政治局 常委 汪洋 同志 今天 发表 重要 讲话'
+    #s = u'今天 这 座 城市 变成 了 一片 汪洋'
+    #s = u'李娜 获得 今年 跳水 比赛 的 冠军'
+    #s = u'李娜 获得 今年 网球 比赛 的 冠军'
+    #s = u'苹果 9月 份 又 发布 了 一款 手机 。'
+    #s = u'今天 吃了 好多 的 苹果 等 水果 。'
 
     # bad case
-    #tagme = Tagme(Query(123, u'2月22日，湖南 常德桃源县 12岁 女孩 陈子墨 的 家 中 突发 大火 ， 在 火场 中 ， 她 紧紧的 护 在 弟弟 身上 ， 呼叫 父母 ， 造成 了 全身 高达 55% 的 烧伤 。 2月27日 ， 经 抢救 无效 ， 陈子墨 不幸 去世 。 家属 痛哭 落泪 '), 0.0001)
-    #tagme = Tagme(Query(123, u'李易峰'), 0.0001)
-    #tagme = Tagme(Query(123, u'今天 吃了 好多 的 苹果 。'), 0.0001)
-    #tagme = Tagme(Query(123, u'李娜 的 歌曲 传唱都 一半 啊。'), 0.0001)
+    s = u'2月22日，湖南 常德桃源县 12岁 女孩 陈子墨 的 家 中 突发 大火 ， 在 火场 中 ， 她 紧紧的 护 在 弟弟 身上 ， 呼叫 父母 ， 造成 了 全身 高达 55% 的 烧伤 。 2月27日 ， 经 抢救 无效 ， 陈子墨 不幸 去世 。 家属 痛哭 落泪 '
+    #s = u'李易峰'
+    #s = u'今天 吃了 好多 的 苹果 。'
+    #s = u'李娜 的 歌曲 传唱度 一半 啊。'
+    tagme = Tagme(Query(123, s), 0.0001)
 
     import time
     start = time.time()
@@ -346,6 +347,7 @@ if __name__ == "__main__":
     print "  pruning ..."
     linked_ens = tagme.prune(disamb_ens)
     print '------------entity linking result------------'
+    print s
     for men in linked_ens:
         print 'mention(%s):%s'%(men, unquote(str(linked_ens[men])))
     print "cost %ss"%(time.time()-start)
